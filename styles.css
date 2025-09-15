@@ -1,0 +1,132 @@
+/* Custom styles for Dr. Vinit's academic website */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8f5ff 0%, #f7fbff 50%, #fef7f2 100%);
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Enhanced focus states for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Custom hover effects for publication links */
+.publication-link {
+    display: inline-block;
+    word-break: break-all;
+    transition: all 0.2s ease;
+}
+
+.publication-link:hover {
+    transform: translateX(4px);
+}
+
+/* News card hover effects */
+.news-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom dropdown arrow animation */
+.dropdown-arrow {
+    transition: transform 0.2s ease;
+}
+
+.dropdown-open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Loading animation for dynamic content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Custom button styles */
+.btn-primary {
+    @apply bg-blue-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300;
+}
+
+.btn-secondary {
+    @apply bg-gray-900 text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    .no-print {
+        display: none;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}
