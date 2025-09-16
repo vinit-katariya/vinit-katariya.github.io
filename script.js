@@ -3,6 +3,12 @@
 // Data for news articles is provided by data.js; fall back to an empty array if it wasn't loaded.
 const resolvedNewsData = typeof newsData !== 'undefined' ? newsData : [];
 const resolvedCVData = typeof cvData !== 'undefined' ? cvData : null;
+const resolvedResearchProjects = (typeof researchProjects !== 'undefined' && Array.isArray(researchProjects))
+    ? researchProjects
+    : [];
+const resolvedPublications = (typeof publications !== 'undefined' && Array.isArray(publications))
+    ? publications
+    : [];
 
 // Helper to format dates for display
 function formatNewsDate(dateString) {
@@ -39,6 +45,17 @@ function renderLatestNewsPreview() {
             ? `<span class="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white rounded-full bg-blue-800">${item.category}</span>`
             : '';
 
+        const actionButtons = [];
+        if (item.pdfLink) {
+            actionButtons.push(`<a href="${item.pdfLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-3 py-1 text-xs font-semibold shadow hover:bg-slate-800">View Details</a>`);
+        }
+        if (item.contactEmail) {
+            actionButtons.push(`<a href="mailto:${item.contactEmail}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:border-slate-500">Contact</a>`);
+        }
+        const actionsBlock = actionButtons.length
+            ? `<div class="mt-4 flex flex-wrap gap-2">${actionButtons.join('')}</div>`
+            : '';
+
         const newsCardHTML = `
             <article class="bg-gray-100 rounded-xl shadow-sm overflow-hidden border border-gray-200 flex flex-col">
                 <div class="bg-white flex items-center justify-center h-56">
@@ -51,11 +68,63 @@ function renderLatestNewsPreview() {
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">${item.title}</h3>
                     <p class="text-gray-700 flex-1">${item.description}</p>
+                    ${actionsBlock}
                 </div>
             </article>
         `;
 
         previewContainer.innerHTML += newsCardHTML;
+    });
+}
+
+// Render research projects from structured data
+function renderResearchProjects() {
+    const projectsContainer = document.getElementById('research-projects');
+    if (!projectsContainer) return;
+
+    projectsContainer.innerHTML = '';
+
+    if (!resolvedResearchProjects.length) {
+        projectsContainer.innerHTML = '<p class="text-gray-600">Research projects will be added soon. Please check back for updates.</p>';
+        return;
+    }
+
+    resolvedResearchProjects.forEach((project, index) => {
+        const projectId = project.id || `project-${index}`;
+        const projectLink = document.createElement('a');
+        projectLink.href = project.detailPage || '#';
+        projectLink.className = 'group flex flex-col gap-4 rounded-2xl border border-slate-100 bg-white/85 p-5 shadow-sm transition hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-slate-500/40';
+        projectLink.dataset.projectId = projectId;
+
+        const imageBlock = document.createElement('div');
+        imageBlock.className = 'h-40 rounded-xl bg-slate-900/5 overflow-hidden flex items-center justify-center';
+        if (project.image) {
+            imageBlock.innerHTML = `<img src="${project.image}" alt="${project.title}" class="h-full w-full object-cover">`;
+        } else if (project.focusArea) {
+            imageBlock.innerHTML = `<span class="text-sm font-semibold uppercase tracking-wider text-slate-500">${project.focusArea}</span>`;
+        } else {
+            imageBlock.innerHTML = '<span class="text-sm font-semibold text-slate-400">Coming Soon</span>';
+        }
+
+        const textBlock = document.createElement('div');
+        textBlock.className = 'space-y-2';
+        if (project.subtitle || project.focusArea) {
+            textBlock.innerHTML += `<p class="text-xs font-semibold uppercase tracking-wide text-slate-500">${project.subtitle || project.focusArea}</p>`;
+        }
+        textBlock.innerHTML += `<h3 class="text-xl font-display font-semibold text-slate-900">${project.title}</h3>`;
+        if (project.summary) {
+            textBlock.innerHTML += `<p class="text-sm text-slate-600 leading-relaxed">${project.summary}</p>`;
+        }
+
+        const footerBlock = document.createElement('div');
+        footerBlock.className = 'inline-flex items-center gap-2 text-sm font-semibold text-slate-500 group-hover:text-slate-900';
+        footerBlock.innerHTML = 'View project <span aria-hidden="true">&rarr;</span>';
+
+        projectLink.appendChild(imageBlock);
+        projectLink.appendChild(textBlock);
+        projectLink.appendChild(footerBlock);
+
+        projectsContainer.appendChild(projectLink);
     });
 }
 
@@ -191,6 +260,17 @@ function renderNews(filter = 'most-recent') {
             ? `<span class="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white rounded-full bg-blue-800">${item.category}</span>`
             : '';
 
+        const actionButtons = [];
+        if (item.pdfLink) {
+            actionButtons.push(`<a href="${item.pdfLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-3 py-1 text-xs font-semibold shadow hover:bg-slate-800">View Details</a>`);
+        }
+        if (item.contactEmail) {
+            actionButtons.push(`<a href="mailto:${item.contactEmail}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:border-slate-500">Contact</a>`);
+        }
+        const actionsBlock = actionButtons.length
+            ? `<div class="mt-4 flex flex-wrap gap-2">${actionButtons.join('')}</div>`
+            : '';
+
         const newsItemHTML = `
             <article class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 flex flex-col lg:flex-row gap-6 news-card">
                 <div class="w-full lg:w-56 flex items-center justify-center bg-gray-100 rounded-lg p-4">
@@ -203,6 +283,7 @@ function renderNews(filter = 'most-recent') {
                     </div>
                     <h3 class="font-bold text-xl mb-2 text-gray-900">${item.title}</h3>
                     <p class="text-gray-600 leading-relaxed flex-1">${item.description}</p>
+                    ${actionsBlock}
                 </div>
             </article>
         `;
@@ -210,9 +291,104 @@ function renderNews(filter = 'most-recent') {
     });
 }
 
+// Render a single news flash banner if available
+function renderNewsFlash() {
+    const flashContainer = document.getElementById('news-flash-banner');
+    if (!flashContainer) return;
+
+    const flashItem = resolvedNewsData.find(item => item.flash === true);
+    if (!flashItem) {
+        flashContainer.classList.add('hidden');
+        return;
+    }
+
+    const { title, description, pdfLink, contactEmail } = flashItem;
+    const ctaButtons = [];
+    if (pdfLink) {
+        ctaButtons.push(`<a href="${pdfLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition">View Details</a>`);
+    }
+    if (contactEmail) {
+        ctaButtons.push(`<a href="mailto:${contactEmail}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-slate-500 transition">Contact</a>`);
+    }
+
+    flashContainer.classList.remove('hidden');
+    flashContainer.innerHTML = `
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm px-5 py-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div class="flex items-start gap-3">
+                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+                <div class="space-y-1">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Research Opportunity</p>
+                    <h2 class="text-lg font-semibold text-slate-900">${title}</h2>
+                    <p class="text-sm text-slate-600">${description}</p>
+                </div>
+            </div>
+            ${ctaButtons.length ? `<div class="flex flex-wrap gap-2">${ctaButtons.join('')}</div>` : ''}
+        </article>
+    `;
+}
+
+function renderPublications() {
+    const featuredContainer = document.getElementById('publications-featured');
+    if (!featuredContainer) return;
+
+    const moreContainer = document.getElementById('more-publications');
+    const toggleButton = document.getElementById('toggle-publications-btn');
+
+    featuredContainer.innerHTML = '';
+    if (moreContainer) {
+        moreContainer.innerHTML = '';
+    }
+
+    const sortedPublications = [...resolvedPublications].sort((a, b) => (b.year || 0) - (a.year || 0));
+
+    const primaryItems = sortedPublications.filter(item => item.visible !== false);
+    const secondaryItems = sortedPublications.filter(item => item.visible === false);
+
+    const buildPublicationCard = (item) => {
+        const yearBadge = item.year
+            ? `<span class="inline-flex items-center rounded-full bg-slate-900/90 px-3 py-1 text-xs font-semibold text-white">${item.year}</span>`
+            : '';
+        const typeBadge = item.type
+            ? `<span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">${item.type}</span>`
+            : '';
+
+        return `
+            <article class="border border-slate-100 rounded-2xl p-5 bg-white/90 shadow-sm">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                    ${yearBadge}
+                    ${typeBadge}
+                </div>
+                <h3 class="text-lg font-semibold text-slate-900">
+                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="hover:text-sky-700 transition-colors">${item.title}</a>
+                </h3>
+            </article>
+        `;
+    };
+
+    if (primaryItems.length) {
+        featuredContainer.innerHTML = primaryItems.map(buildPublicationCard).join('');
+    } else {
+        featuredContainer.innerHTML = '<p class="text-sm text-slate-600">No publications available yet.</p>';
+    }
+
+    const hasHidden = secondaryItems.length > 0;
+    if (moreContainer) {
+        moreContainer.innerHTML = secondaryItems.map(buildPublicationCard).join('');
+    }
+
+    if (toggleButton) {
+        if (!hasHidden) {
+            toggleButton.classList.add('hidden');
+        } else {
+            toggleButton.classList.remove('hidden');
+            toggleButton.textContent = moreContainer && moreContainer.classList.contains('hidden') ? 'See More' : 'See Less';
+        }
+    }
+}
+
 // Function to handle tab navigation
 function initializeTabNavigation() {
-    const tabs = document.querySelectorAll('nav a');
+    const tabs = document.querySelectorAll('nav a[data-tab]');
     const contents = document.querySelectorAll('main section[data-content]');
     
     tabs.forEach(tab => {
@@ -302,7 +478,7 @@ function initializeSmoothScrolling() {
 // Function to initialize accessibility features
 function initializeAccessibility() {
     // Add keyboard navigation for tabs
-    const tabs = document.querySelectorAll('nav a');
+    const tabs = document.querySelectorAll('nav a[data-tab]');
     tabs.forEach((tab, index) => {
         tab.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
@@ -358,12 +534,15 @@ function initializeWebsite() {
     // Initialize all components
     initializeTabNavigation();
     initializeNewsFilter();
+    renderPublications();
     initializePublicationsToggle();
     initializeSmoothScrolling();
     initializeAccessibility();
     initializeResponsiveFeatures();
     initializeLatestNewsPreview();
+    renderNewsFlash();
     renderCV();
+    renderResearchProjects();
     
     // Set initial active tab to "Home"
     const homeTab = document.querySelector('a[data-tab="home"]');
@@ -384,6 +563,9 @@ if (typeof module !== 'undefined' && module.exports) {
         renderNews,
         renderLatestNewsPreview,
         renderCV,
+        renderPublications,
+        renderNewsFlash,
+        renderResearchProjects,
         newsData: resolvedNewsData,
         initializeWebsite
     };

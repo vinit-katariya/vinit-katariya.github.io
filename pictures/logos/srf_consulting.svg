@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="20" fill="#1F2933"/>
+  <rect x="18" y="28" width="84" height="64" rx="18" fill="#F97316" opacity="0.9"/>
+  <text x="60" y="70" font-family="'Inter',sans-serif" font-weight="700" font-size="30" text-anchor="middle" fill="#fff">SRF</text>
+</svg>

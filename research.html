@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Projects | Vinit Katariya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-rose-50 via-sky-50 to-slate-50 text-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-10 space-y-12">
+        <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="h-12 w-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-semibold tracking-wide">VK</div>
+                <div>
+                    <h1 class="font-display text-3xl text-slate-900 leading-tight">Research Portfolio</h1>
+                    <p class="text-sm text-slate-500">Ongoing projects led by Vinit Katariya, Assistant Professor at the University of Wyoming.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="index_html.html" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:border-slate-500 transition">&larr; Back to Home</a>
+                <a href="mailto:vkatariy@uwyo.edu" class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-800 transition">Collaborate</a>
+            </div>
+        </header>
+
+        <section class="rounded-3xl bg-white/85 backdrop-blur-sm shadow-xl ring-1 ring-slate-100 p-8 space-y-8">
+            <div class="space-y-3 max-w-3xl">
+                <span class="inline-flex items-center gap-2 rounded-full bg-sky-100 text-sky-800 px-4 py-1 text-xs font-semibold uppercase tracking-wide">Research Portfolio</span>
+                <p class="text-lg text-slate-700">Innovations across computer vision, AI-driven infrastructure, and public safety analytics. Click any project to launch a dedicated brief in a new tab.</p>
+            </div>
+
+            <div id="research-projects" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+        </section>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

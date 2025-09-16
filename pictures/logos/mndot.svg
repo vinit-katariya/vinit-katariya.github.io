@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="20" fill="#0B4A9E"/>
+  <circle cx="60" cy="40" r="20" fill="#00AEEF"/>
+  <rect x="50" y="60" width="20" height="32" rx="6" fill="#84BD00"/>
+  <text x="60" y="110" font-family="'Inter',sans-serif" font-weight="700" font-size="28" text-anchor="middle" fill="#fff">MnDOT</text>
+</svg>

@@ -96,6 +96,18 @@ const publications = [
 // News Data
 const newsData = [
     {
+        id: "research-positions-2025",
+        title: "Research Positions Available!",
+        date: "2025-09-20",
+        description: "Interested candidates should directly reach out to Dr. Katariya to learn more about available research roles.",
+        image: "pictures/eecs_uwyo_logo.jpg",
+        category: "opportunity",
+        featured: true,
+        flash: true,
+        pdfLink: "pictures/files/research%20opportunity.pdf",
+        contactEmail: "vkatariy@uwyo.edu"
+    },
+    {
         id: "icmla-2025",
         title: "New Publication Accepted (ICMLA) 2025",
         date: "2025-09-14",
@@ -157,6 +169,129 @@ const researchAreas = [
     "Cyber-Physical Systems",
     "Machine Learning",
     "Deep Learning"
+];
+
+// Research Projects
+const researchProjects = [
+    {
+        id: "ai-urban-infrastructure",
+        title: "AI for Urban Infras.",
+        subtitle: "Pedestrian Safety",
+        summary: "Studying the impact of soft infrastructure changes on pedestrian safety through computer vision analysis in Minneapolis.",
+        description: "Developed an AI-based assessment framework that taps into municipal CCTV networks or existing video archives to uncover how street-level changes influence pedestrian outcomes.",
+        image: "pictures/research/Speed_AI_pipeline.png",
+        focusArea: "Urban AI",
+        detailPage: "research/ai-urban-infrastructure.html",
+        highlights: [
+            "Use CCTV cameras or existing videos for rapid deployment",
+            "Easily integrates with new or legacy CCTV infrastructure",
+            "Cost-effective and highly scalable architecture",
+            "AI-driven analytics to extract actionable insights"
+        ],
+        insights: [
+            "Speed Analysis: Vehicle speed monitoring and traffic trend discovery",
+            "Behavioral Insights: Stop behavior and motion direction profiling"
+        ],
+        partners: [
+            {
+                name: "UNC Charlotte",
+                logo: "pictures/logos/unc_charlotte.svg"
+            },
+            {
+                name: "University of Minnesota",
+                logo: "pictures/logos/university_of_minnesota.svg"
+            },
+            {
+                name: "MnDOT",
+                logo: "pictures/logos/mndot.svg"
+            }
+        ],
+        funders: [
+            {
+                name: "MnDOT",
+                logo: "pictures/logos/mndot.svg"
+            }
+        ]
+    },
+    {
+        id: "highway-workzone-safety",
+        title: "Highway Workzone Safety",
+        subtitle: "Real-time Edge AI",
+        summary: "Edge AI pipeline for real-time trajectory tracking and anomaly prediction in highway workzones.",
+        description: "Deploying lightweight perception models to monitor active workzones, anticipate unsafe maneuvers, and alert crews before incidents escalate.",
+        image: "pictures/research/highway_workzone/WZ_time.png",
+        focusArea: "Edge AI",
+        detailPage: "research/highway-workzone-safety.html",
+        highlights: [
+            "Edge-deployable multi-modal sensing stack",
+            "Trajectory forecasting tuned for congested corridors",
+            "Anomaly scoring tailored to highway workzone conditions"
+        ],
+        insights: [
+            "Predictive risk alerts for field crews",
+            "Data pipeline ready for DOT-scale integrations"
+        ],
+        partners: [
+            {
+                name: "UNC Charlotte",
+                logo: "pictures/logos/unc_charlotte.svg"
+            },
+            {
+                name: "University of Minnesota",
+                logo: "pictures/logos/university_of_minnesota.svg"
+            },
+            {
+                name: "NSF",
+                logo: "pictures/logos/nsf.svg"
+            }
+        ],
+        funders: [
+            {
+                name: "NSF",
+                logo: "pictures/logos/nsf.svg"
+            }
+        ]
+    },
+    {
+        id: "rural-roundabouts",
+        title: "Rural Roundabouts",
+        subtitle: "Vision for Safer Junctions",
+        summary: "AI-enabled analytics guiding new rural roundabout designs with speed behavior insights and occupancy tracking.",
+        description: "We evaluate prototype rural roundabout configurations using edge perception to measure approach speeds, circulating occupancy, and compliance. Results inform SRF Consulting and MnDOT on design refinements for high-speed corridors.",
+        image: "pictures/research/rab/roundabout_overview.svg",
+        focusArea: "Transportation AI",
+        detailPage: "research/rural-roundabouts.html",
+        highlights: [
+            "New rural roundabout geometry evaluation",
+            "Speed behavior modelling across approaches",
+            "AI-based speed estimation at the edge",
+            "Occupancy detection for circulating traffic"
+        ],
+        insights: [
+            "Vision analytics tuned for low-light rural settings",
+            "Configurable dashboards for DOT design reviews"
+        ],
+        partners: [
+            {
+                name: "SRF Consulting",
+                logo: "pictures/logos/srf_consulting.svg"
+            },
+            {
+                name: "UNC Charlotte",
+                logo: "pictures/logos/unc_charlotte.svg"
+            },
+            {
+                name: "University of Minnesota",
+                logo: "pictures/logos/university_of_minnesota.svg"
+            }
+        ],
+        funders: [
+            {
+                name: "MnDOT",
+                logo: "pictures/logos/mndot.svg"
+            }
+        ]
+    }
 ];
 
 // Website Configuration

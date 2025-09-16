@@ -21,17 +21,17 @@
                 </div>
                 <div class="flex flex-col">
                     <span class="font-display text-2xl text-slate-900 leading-tight">Vinit Katariya</span>
-                    <span class="text-sm text-slate-500">Assistant Professor · University of Wyoming</span>
+                    <span class="text-sm text-slate-500">Assistant Professor</span>
+                    <span class="text-sm text-slate-500">University of Wyoming</span>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <nav>
                     <ul class="flex space-x-6 md:space-x-10 text-lg font-medium">
                         <li><a href="#" data-tab="home" class="active-tab border-b-2 border-gray-900 pb-1 hover:text-gray-900 transition-colors duration-200">Home</a></li>
-                        <li><a href="#" data-tab="about" class="border-b-2 border-transparent pb-1 hover:border-gray-900 hover:text-gray-900 transition-all duration-200">About</a></li>
+                        <li><a href="#" data-tab="research" class="border-b-2 border-transparent pb-1 hover:border-gray-900 hover:text-gray-900 transition-all duration-200">Research</a></li>
                         <li><a href="#" data-tab="publications" class="border-b-2 border-transparent pb-1 hover:border-gray-900 hover:text-gray-900 transition-all duration-200">Publications</a></li>
                         <li><a href="#" data-tab="news" class="border-b-2 border-transparent pb-1 hover:border-gray-900 hover:text-gray-900 transition-all duration-200">News</a></li>
-                        <li><a href="research/index.html" class="border-b-2 border-transparent pb-1 hover:border-gray-900 hover:text-gray-900 transition-all duration-200">Research</a></li>
                         <li><a href="#" data-tab="cv" class="border-b-2 border-transparent pb-1 hover:border-gray-900 hover:text-gray-900 transition-all duration-200">CV</a></li>
                         <li><a href="#" data-tab="contact" class="border-b-2 border-transparent pb-1 hover:border-gray-900 hover:text-gray-900 transition-all duration-200">Contact</a></li>
                     </ul>
@@ -67,6 +67,8 @@
             </div>
         </header>
 
+        <div id="news-flash-banner" class="mt-6"></div>
+
         <main class="mt-12">
             <section id="home" data-content="home">
                 <div class="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-md shadow-xl ring-1 ring-slate-100 px-8 py-12">
@@ -76,7 +78,7 @@
                     <div class="flex flex-col lg:flex-row items-center lg:items-stretch gap-10 relative z-10">
                         <div class="flex-shrink-0 w-full sm:w-2/3 lg:w-1/3 xl:w-1/4 max-w-sm">
                             <div class="rounded-2xl overflow-hidden shadow-lg ring-1 ring-slate-100">
-                                <img src="pictures/Vinit_Katariya_bio.jpg" alt="A professional portrait of Dr. Vinit Katariya" class="w-full h-auto object-cover">
+                                <img src="pictures/vinit_dark.png" alt="A professional portrait of Dr. Vinit Katariya" class="w-full h-auto object-cover">
                             </div>
                         </div>
                         <div class="flex-1 flex flex-col justify-between space-y-6">
@@ -109,17 +111,16 @@
                 </section>
             </section>
             
-            <section id="about" data-content="about" class="hidden flex-col md:flex-row items-center md:items-start gap-12 rounded-3xl bg-white/85 backdrop-blur-sm shadow-xl ring-1 ring-slate-100 p-8">
-                <div class="flex-shrink-0 w-full md:w-1/4 max-w-xs rounded-2xl overflow-hidden shadow-lg ring-1 ring-slate-100">
-                    <img src="pictures/Vinit_Katariya_bio.jpg" alt="A professional portrait of Dr. Vinit Katariya" class="w-full h-auto object-cover">
-                </div>
-
-                <div class="flex-1 w-full md:w-2/3">
-                    <h3 class="text-3xl font-semibold text-slate-900 font-display mb-4">About</h3>
-                    <p class="text-lg leading-relaxed text-slate-700">
-                        Dr. Vinit Katariya is an assistant professor at the University of Wyoming. His research focuses on developing efficient and scalable machine learning algorithms for real-time applications. He holds a Ph.D. in Computer Science from a reputable university and has published numerous papers in top-tier conferences and journals. His work is primarily centered on vehicle trajectory prediction, anomaly detection in video surveillance, and edge AI for cyber-physical systems.
-                    </p>
+            <section id="research" data-content="research" class="hidden mt-12">
+                <div class="rounded-3xl bg-white/85 backdrop-blur-sm shadow-xl ring-1 ring-slate-100 p-8 space-y-8">
+                    <div class="space-y-3">
+                        <span class="inline-flex items-center gap-2 rounded-full bg-sky-100 text-sky-800 px-4 py-1 text-xs font-semibold uppercase tracking-wide">Research Portfolio</span>
+                        <h2 class="text-3xl font-semibold text-gray-900 font-display">Applied AI for Safer Cities</h2>
+                        <p class="text-sm text-slate-600 max-w-3xl">Explore current projects advancing computer vision, infrastructure intelligence, and safety analytics. Click any project to open a detailed overview in a new tab.</p>
                     </div>
+
+                    <div id="research-projects" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+                </div>
             </section>
 
             <section id="publications" data-content="publications" class="hidden mt-12">
@@ -128,54 +129,12 @@
                         <span class="inline-flex items-center gap-2 rounded-full bg-sky-100 text-sky-800 px-4 py-1 text-xs font-semibold uppercase tracking-wide">Selected Work</span>
                         <h2 class="text-3xl font-semibold text-gray-900 font-display">Publications</h2>
                     </div>
-                    <div class="space-y-4">
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-semibold text-lg text-gray-900">Deeptrack: Lightweight deep learning for vehicle trajectory prediction in highways</h3>
-                            <a href="https://ieeexplore.ieee.org/abstract/document/9770480" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://ieeexplore.ieee.org/abstract/document/9770480</a>
-                        </div>
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-bold text-lg text-gray-900">Understanding the challenges and opportunities of pose-based anomaly detection</h3>
-                            <a href="https://dl.acm.org/doi/abs/10.1145/3615834.3615844" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://dl.acm.org/doi/abs/10.1145/3615834.3615844</a>
-                        </div>
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-bold text-lg text-gray-900">Exploring Public's perception of safety and video surveillance technology: A survey approach</h3>
-                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0160791X24001891" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://www.sciencedirect.com/science/article/abs/pii/S0160791X24001891</a>
-                        </div>
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-bold text-lg text-gray-900">Pishgu: Universal path prediction network architecture for real-time cyber-physical edge systems</h3>
-                            <a href="https://dl.acm.org/doi/abs/10.1145/3576841.3585933" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://dl.acm.org/doi/abs/10.1145/3576841.3585933</a>
-                        </div>
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-bold text-lg text-gray-900">Enhancing automatic modulation recognition for iot applications using transformers</h3>
-                            <a href="https://www.mdpi.com/2624-831X/5/2/11" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://www.mdpi.com/2624-831X/5/2/11</a>
-                        </div>
+                    <div id="publications-featured" class="space-y-4"></div>
 
-                        <div id="more-publications" class="hidden space-y-4">
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-bold text-lg text-gray-900">Vt-former: An exploratory study on vehicle trajectory prediction for highway surveillance through graph isomorphism and transformer</h3>
-                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/PRECOGNITION/html/Pazho_VT-Former_An_Exploratory_Study_on_Vehicle_Trajectory_Prediction_for_Highway_CVPRW_2024_paper.html" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://openaccess.thecvf.com/content/CVPR2024W/PRECOGNITION/html/Pazho_VT-Former_An_Exploratory_Study_on_Vehicle_Trajectory_Prediction_for_Highway_CVPRW_2024_paper.html</a>
-                        </div>
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-bold text-lg text-gray-900">A pov-based highway vehicle trajectory dataset and prediction architecture</h3>
-                            <a href="https://ieeexplore.ieee.org/abstract/document/10623849" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://ieeexplore.ieee.org/abstract/document/10623849</a>
-                        </div>
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-bold text-lg text-gray-900">Pishgu: Universal path prediction architecture through graph isomorphism and attentive convolution</h3>
-                            <a href="https://arxiv.org/pdf/2210.08057" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://arxiv.org/pdf/2210.08057</a>
-                        </div>
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-bold text-lg text-gray-900">VegaEdge: Edge AI confluence for real-time IoT-applications in highway safety</h3>
-                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S2542660524002099" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://www.sciencedirect.com/science/article/abs/pii/S2542660524002099</a>
-                        </div>
-                        <div class="border border-slate-100 rounded-2xl p-5 bg-white/90">
-                            <h3 class="font-bold text-lg text-gray-900">Distributed learning for automatic modulation recognition in bandwidth-limited networks</h3>
-                            <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13057/130570X/Distributed-learning-for-automatic-modulation-recognition-in-bandwidth-limited-networks/10.1117/12.3013532.short" class="text-sm text-sky-700 hover:text-sky-900 transition-colors duration-200 publication-link">https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13057/130570X/Distributed-learning-for-automatic-modulation-recognition-in-bandwidth-limited-networks/10.1117/12.3013532.short</a>
-                        </div>
-                    </div>
-                    
+                    <div id="more-publications" class="hidden space-y-4"></div>
+
                     <button id="toggle-publications-btn" class="mt-6 w-full text-center py-3 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors duration-200">See More</button>
 
-                    </div>
                 </div>
             </section>
 
