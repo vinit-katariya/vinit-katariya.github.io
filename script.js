@@ -427,6 +427,11 @@ function initializeTabNavigation() {
             if (targetContent) {
                 targetContent.classList.remove('hidden');
                 targetContent.classList.add('fade-in');
+                if (tabName === 'home') {
+                    document.body.classList.add('home-active');
+                } else {
+                    document.body.classList.remove('home-active');
+                }
             }
 
             // If the News tab is clicked, render the news items
@@ -560,7 +565,8 @@ function initializeWebsite() {
     if (homeTab) {
         homeTab.click();
     }
-    
+    document.body.classList.add('home-active');
+
     // Add loading animation to body
     document.body.classList.add('fade-in');
 }

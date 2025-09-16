@@ -130,3 +130,17 @@ select:focus {
         color: #666;
     }
 }
+.profile-avatar {
+    width: 5.5rem;
+    height: 5.5rem;
+    transition: width 0.25s ease, height 0.25s ease;
+}
+
+body:not(.home-active) .profile-avatar {
+    width: 3.75rem;
+    height: 3.75rem;
+}
+
+body.home-active #home {
+    display: block;
+}
