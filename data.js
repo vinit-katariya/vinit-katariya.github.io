@@ -7,7 +7,7 @@ const personalInfo = {
     institution: "University of Wyoming",
     email: "vkatariy@uwyo.edu",
     facultyPage: "https://www.uwyo.edu/eecs/faculty-staff/faculty/vinit-katariya.html",
-    profileImage: "pictures/Vinit_Katariya_bio.jpg",
+    profileImage: "pictures/vinit_katariya_bio.png",
     bio: "Dr. Vinit Katariya is an assistant professor at the University of Wyoming. His research focuses on developing efficient and scalable machine learning algorithms for real-time applications. He holds a Ph.D. in Computer Science from a reputable university and has published numerous papers in top-tier conferences and journals. His work is primarily centered on vehicle trajectory prediction, anomaly detection in video surveillance, and edge AI for cyber-physical systems."
 };
 
