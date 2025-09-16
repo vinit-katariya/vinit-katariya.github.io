@@ -11,7 +11,8 @@ academic-website/
 ├── script.js           # Main JavaScript functionality
 ├── data.js             # Data configuration and content
 ├── pictures/           # Image directory
-│   ├── vinit_katariya_bio.png
+│   ├── bio/
+│   │   └── vinit_dark.png
 │   └── ICMLA.png
 └── README.md           # This file
 ```
@@ -46,7 +47,7 @@ academic-website/
 1. **Clone or download** the project files
 2. **Ensure all files** are in the same directory
 3. **Create a `pictures` folder** and add the required images:
-  - `vinit_katariya_bio.png` (profile photo)
+  - `bio/vinit_dark.png` (profile photo)
    - `ICMLA.png` (conference logo)
 4. **Open `index.html`** in a web browser
 5. **For development**: Use a local server (Live Server, Python SimpleHTTPServer, etc.)
