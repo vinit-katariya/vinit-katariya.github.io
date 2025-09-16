@@ -339,7 +339,14 @@ function renderPublications() {
         moreContainer.innerHTML = '';
     }
 
-    const sortedPublications = [...resolvedPublications].sort((a, b) => (b.year || 0) - (a.year || 0));
+    const sortedPublications = [...resolvedPublications].sort((a, b) => {
+        const yearDiff = (b.year || 0) - (a.year || 0);
+        if (yearDiff !== 0) return yearDiff;
+
+        const orderA = typeof a.order === 'number' ? a.order : Number.MAX_SAFE_INTEGER;
+        const orderB = typeof b.order === 'number' ? b.order : Number.MAX_SAFE_INTEGER;
+        return orderA - orderB;
+    });
 
     const primaryItems = sortedPublications.filter(item => item.visible !== false);
     const secondaryItems = sortedPublications.filter(item => item.visible === false);
@@ -351,6 +358,9 @@ function renderPublications() {
         const typeBadge = item.type
             ? `<span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">${item.type}</span>`
             : '';
+        const venueLine = item.venue
+            ? `<p class="text-sm text-slate-600 mt-2">${item.venue}</p>`
+            : '';
 
         return `
             <article class="border border-slate-100 rounded-2xl p-5 bg-white/90 shadow-sm">
@@ -361,6 +371,7 @@ function renderPublications() {
                 <h3 class="text-lg font-semibold text-slate-900">
                     <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="hover:text-sky-700 transition-colors">${item.title}</a>
                 </h3>
+                ${venueLine}
             </article>
         `;
     };
