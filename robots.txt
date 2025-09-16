@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vinit-katariya.github.io/sitemap.xml

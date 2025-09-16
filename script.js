@@ -47,10 +47,10 @@ function renderLatestNewsPreview() {
 
         const actionButtons = [];
         if (item.pdfLink) {
-            actionButtons.push(`<a href="${item.pdfLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 text-white px-3 py-1 text-xs font-semibold shadow hover:bg-slate-800 text-center">View Details</a>`);
+            actionButtons.push(`<a href="${item.pdfLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 transition text-center">Details</a>`);
         }
         if (item.contactEmail) {
-            actionButtons.push(`<a href="mailto:${item.contactEmail}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:border-slate-500">Contact</a>`);
+            actionButtons.push(`<a href="mailto:${item.contactEmail}" class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 hover:border-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-200 transition text-center">Contact</a>`);
         }
         const actionsBlock = actionButtons.length
             ? `<div class="mt-4 flex flex-wrap gap-2">${actionButtons.join('')}</div>`
@@ -262,10 +262,10 @@ function renderNews(filter = 'most-recent') {
 
         const actionButtons = [];
         if (item.pdfLink) {
-            actionButtons.push(`<a href="${item.pdfLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 text-white px-3 py-1 text-xs font-semibold shadow hover:bg-slate-800 text-center">View Details</a>`);
+            actionButtons.push(`<a href="${item.pdfLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 transition text-center">Details</a>`);
         }
         if (item.contactEmail) {
-            actionButtons.push(`<a href="mailto:${item.contactEmail}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:border-slate-500">Contact</a>`);
+            actionButtons.push(`<a href="mailto:${item.contactEmail}" class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 hover:border-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-200 transition text-center">Contact</a>`);
         }
         const actionsBlock = actionButtons.length
             ? `<div class="mt-4 flex flex-wrap gap-2">${actionButtons.join('')}</div>`
@@ -305,10 +305,10 @@ function renderNewsFlash() {
     const { title, description, pdfLink, contactEmail } = flashItem;
     const ctaButtons = [];
     if (pdfLink) {
-        ctaButtons.push(`<a href="${pdfLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition text-center">View Details</a>`);
+        ctaButtons.push(`<a href="${pdfLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 transition text-center">Details</a>`);
     }
     if (contactEmail) {
-        ctaButtons.push(`<a href="mailto:${contactEmail}" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-slate-500 transition">Contact</a>`);
+        ctaButtons.push(`<a href="mailto:${contactEmail}" class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 hover:border-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-200 transition text-center">Contact</a>`);
     }
 
     flashContainer.classList.remove('hidden');
