@@ -227,9 +227,9 @@ const publications = [
 const newsData = [
     {
         id: "research-positions-2025",
-        title: "Research Positions Available!",
+        title: "Research Positions Available",
         date: "2025-09-20",
-        description: "Interested candidates should directly reach out to Dr. Katariya to learn more about available research roles.",
+        description: "I have openings for passionate, talented, and self-motivated researchers at both the MS and PhD levels. MS students should reach out directly to discuss available positions. Prospective PhD students should review the posted opportunity details and contact me.",
         image: "pictures/eecs_uwyo_logo.jpg",
         category: "opportunity",
         featured: true,
@@ -461,14 +461,9 @@ const cvData = {
     ],
     academicPositions: [
         {
-            title: "Assistant Professor (Joint Appointment)",
-            organization: "Department of Electrical Engineering and Computer Science & School of Computing, University of Wyoming",
-            period: "August 2025 – Present",
-            bullets: [
-                "Establishing a nationally recognized research program in embedded edge-based computer vision and deep learning.",
-                "Supervising graduate and undergraduate researchers and leading externally funded projects.",
-                "Publishing in top-tier venues while expanding cross-disciplinary collaborations."
-            ]
+            title: "Assistant Professor",
+            organization: "<a href=\"https://www.uwyo.edu/eecs/faculty-staff/faculty/vinit-katariya.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-700 hover:underline\">Department of Electrical Engineering and Computer Science</a> & School of Computing, University of Wyoming",
+            period: "August 2025 – Present"
         },
         {
             title: "Postdoctoral Researcher",
