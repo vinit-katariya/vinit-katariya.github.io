@@ -234,7 +234,7 @@ const newsData = [
         category: "opportunity",
         featured: true,
         flash: true,
-        pdfLink: "pictures/files/research%20opportunity.pdf",
+        pdfLink: "pictures/files/PhD%20Opportunities%20%E2%80%93%20Katariya%20Lab%2C%20University%20of%20Wyoming.pdf",
         contactEmail: "vkatariy@uwyo.edu"
     },
     {
@@ -427,7 +427,7 @@ const researchProjects = [
 // Website Configuration
 const siteConfig = {
     title: "Dr. Vinit - Academic Website",
-    description: "Official academic website of Dr. Vinit Katariya, Assistant Professor at the University of Wyoming",
+    description: "Official website of Dr. Vinit Katariya, Assistant Professor at the University of Wyoming",
     author: "Dr. Vinit Katariya",
     keywords: "artificial intelligence, computer vision, IoT, machine learning, University of Wyoming",
     version: "2.0.0"
@@ -435,7 +435,7 @@ const siteConfig = {
 
 // CV Data
 const cvData = {
-    introduction: "A detailed overview of Dr. Katariya's academic background, research portfolio, teaching, and service.",
+    introduction: "Overview of my academic background, research portfolio, teaching, and service.",
     education: [
         {
             degree: "Ph.D. in Electrical Engineering",
